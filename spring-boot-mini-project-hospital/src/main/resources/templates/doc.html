@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: bisque;">
+    <div class="container mt-5">
+        <h1 class="mb-4">Doctor Details</h1>
+		<a href="user" type="button" class="btn btn-primary">Add  DOCTOR</a>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Phone No</th>
+                    <th scope="col">Actions</th> <!-- Added column for actions -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user:${doctors}">
+					
+                    <td th:text="${user.doctorname}"></td>
+                    <td th:text="${user.specialization}"></td>
+                    <td th:text="${user.experience}"></td>
+                    <td th:text="${user.phoneNo}"></td>
+                    <td>
+						<a th:href="@{/view/{id}(id=${user.id})}" type="button" class="btn btn-primary">view</a>
+						
+									  </td>
+                </tr>
+            </tbody>
+        </table>
+		<a href="Ind1" type="button" class="btn btn-primary">Back</a>
+    </div>
+</body>
+</html>

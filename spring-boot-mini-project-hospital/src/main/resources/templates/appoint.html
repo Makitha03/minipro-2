@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: bisque;">
+    <div class="container mt-5">
+        <h1 class="mb-4">Appointment Schedule</h1>
+		<a href="user1" type="button" class="btn btn-primary"> ADD BOOK APPOINTMENT</a>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+					
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Specialization</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+					<th scope="col">Actions</th>
+					</tr>
+					           </thead>
+					           <tbody>
+					               <tr th:each="user1:${appointments}">
+									
+					                   <td th:text="${user1.doctornamee}"></td>
+					                   <td th:text="${user1.specialization}"></td>
+					                   <td th:text="${user1.date}"></td>
+					                   <td th:text="${user1.time}"></td>
+					                   <td>
+										<a th:href="@{/view1/{id}(id=${user1.id})}" type="button" class="btn btn-primary">view</a>
+										
+													  </td>
+					               </tr>
+					           </tbody>
+							   </table>
+							   <a href="Ind1" type="button" class="btn btn-primary">Back</a>
+							       </div>
+								   
+							   </body>
+							   </html>

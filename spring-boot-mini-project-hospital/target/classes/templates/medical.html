@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="background-color: bisque;">
+    <div class="container mt-5">
+        <h1 class="mb-4">Medication</h1>
+		<a href="user2" type="button" class="btn btn-primary">ADD MEDICATION</a>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+				    <th scope="col">Patient name</th>
+                    <th scope="col">dosage</th>
+                    <th scope="col">frequency</th>
+                    <th scope="col">startdate</th>
+					<th scope="col">enddate</th>
+					<th scope="col">Action</th>
+					</tr>
+					           </thead>
+					           <tbody>
+					               <tr th:each="user2:${medications}">
+					                   <td th:text="${user2.patientname}"></td>
+					                   <td th:text="${user2.dosage}"></td>
+									   <td th:text="${user2.frequency}"></td>
+					                   <td th:text="${user2.startdate}"></td>
+					                   <td th:text="${user2.enddate}"></td>
+									 
+					                   <td>
+										<a th:href="@{/view2/{id}(id=${user2.id})}" type="button" class="btn btn-primary">VIEW</a>
+										<a th:href="@{/update2/{id}(id=${user2.id})}" type="button" class="btn btn-primary">EDIT</a>
+										<a th:href="@{/delete2/{id}(id=${user2.id})}" type="button" class="btn btn-success">DELETE</a>
+													  </td>
+					               </tr>
+					           </tbody>
+							   </table>
+							   <a href="Ind1" type="button" class="btn btn-primary">Back</a>
+							       </div>
+							   </body>
+							   </html>
